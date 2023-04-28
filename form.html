@@ -8,8 +8,62 @@
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
-<form action="./result.html">
-    
-</form>    
+    <div class="container">
+		<h1>Registration Form</h1>
+		<form action="./result.html" method="get">
+			<label for="name">First Name:</label>
+			<input type="text" id="name" name="name" required>
+			<br>
+            <label for="lname">Last Name:</label>
+			<input type="text" id="lname" name="lname" required>
+			<br>
+			<label for="email">E-mail:</label>
+			<input type="email" id="email" name="email" required>
+			<br>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+			<br>
+            <label for="date">Date of Birth:</label>
+			<input type="date" id="date" name="date" required>
+			<br>
+            <div class="gender"> 
+            <label for="gender">Gender:</label>
+            <label for="erkek">Male</label>
+            <input type="radio" name="gender" id="erkek" />
+            <label for="kadin">Female</label>
+            <input type="radio" name="gender" id="kadin" />
+              
+            </div>
+			<br>
+            <div style="text-align: right;">
+            <input type="submit" value="SUBMIT">
+            <input type="button" id="clear-button" value="CLEAR">            
+            </div>
+		</form>
+	</div>    
 </body>
+<script>
+    // Formu temizleme fonksiyonu
+function clearForm() {
+   // input alanlarını al
+   var nameInput = document.getElementById('name');
+   var lnameInput = document.getElementById('lname');
+  var emailInput = document.getElementById('email');
+  var passwordInput = document.getElementById('password');
+  var dateInput = document.getElementById('date');
+
+  //  alanlarının değerlerini sıfırla
+  nameInput.value = '';
+  lnameInput.value = '';
+  emailInput.value = '';
+  passwordInput.value = '';
+  dateInput.value = '';
+  }
+
+
+// Temizleme butonunu al ve tıklama olayına bağla
+var clearButton = document.getElementById('clear-button');
+clearButton.addEventListener('click', clearForm);
+
+</script>
 </html>
